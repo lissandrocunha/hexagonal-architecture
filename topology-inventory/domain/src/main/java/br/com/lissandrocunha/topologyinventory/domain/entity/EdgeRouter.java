@@ -11,6 +11,7 @@ import br.com.lissandrocunha.topologyinventory.domain.vo.RouterType;
 import br.com.lissandrocunha.topologyinventory.domain.vo.Vendor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.util.Map;
@@ -19,6 +20,7 @@ import java.util.Map;
 @ToString
 public class EdgeRouter extends Router {
 
+    @Setter
     private Map<Id, Switch> switches;
 
     @Builder

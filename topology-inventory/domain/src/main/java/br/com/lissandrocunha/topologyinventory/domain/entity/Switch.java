@@ -3,16 +3,10 @@ package br.com.lissandrocunha.topologyinventory.domain.entity;
 import br.com.lissandrocunha.topologyinventory.domain.specification.CIDRSpecification;
 import br.com.lissandrocunha.topologyinventory.domain.specification.NetworkAmountSpec;
 import br.com.lissandrocunha.topologyinventory.domain.specification.NetworkAvailabilitySpec;
-import br.com.lissandrocunha.topologyinventory.domain.vo.IP;
-import br.com.lissandrocunha.topologyinventory.domain.vo.Id;
-import br.com.lissandrocunha.topologyinventory.domain.vo.Location;
-import br.com.lissandrocunha.topologyinventory.domain.vo.Model;
-import br.com.lissandrocunha.topologyinventory.domain.vo.Network;
-import br.com.lissandrocunha.topologyinventory.domain.vo.Protocol;
-import br.com.lissandrocunha.topologyinventory.domain.vo.SwitchType;
-import br.com.lissandrocunha.topologyinventory.domain.vo.Vendor;
+import br.com.lissandrocunha.topologyinventory.domain.vo.*;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -23,11 +17,15 @@ public class Switch extends Equipment {
     private SwitchType switchType;
     private List<Network> switchNetworks;
 
+    @Setter
+    private Id routerId;
+
     @Builder
-    public Switch(Id id, Vendor vendor, Model model, IP ip, Location location, SwitchType switchType, List<Network> switchNetworks){
-        super(id, vendor, model, ip, location);
+    public Switch(Id switchId, Id routerId, Vendor vendor, Model model, IP ip, Location location, SwitchType switchType, List<Network> switchNetworks){
+        super(switchId, vendor, model, ip, location);
         this.switchType = switchType;
         this.switchNetworks = switchNetworks;
+        this.routerId = routerId;
     }
 
     public static Predicate<Network> getNetworkProtocolPredicate(Protocol protocol){

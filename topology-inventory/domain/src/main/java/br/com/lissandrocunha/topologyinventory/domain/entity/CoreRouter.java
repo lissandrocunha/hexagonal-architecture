@@ -1,6 +1,5 @@
 package br.com.lissandrocunha.topologyinventory.domain.entity;
 
-
 import br.com.lissandrocunha.topologyinventory.domain.specification.EmptyRouterSpec;
 import br.com.lissandrocunha.topologyinventory.domain.specification.EmptySwitchSpec;
 import br.com.lissandrocunha.topologyinventory.domain.specification.SameCountrySpec;
@@ -13,23 +12,23 @@ import br.com.lissandrocunha.topologyinventory.domain.vo.RouterType;
 import br.com.lissandrocunha.topologyinventory.domain.vo.Vendor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
+import java.util.HashMap;
 import java.util.Map;
-
-
 
 @Getter
 @ToString
 public class CoreRouter extends Router{
 
-    @Getter
+    @Setter
     private Map<Id, Router> routers;
 
     @Builder
     public CoreRouter(Id id, Vendor vendor, Model model, IP ip, Location location, RouterType routerType, Map<Id, Router> routers) {
         super(id, vendor, model, ip, location, routerType);
-        this.routers = routers;
+        this.routers = routers == null ? new HashMap<Id, Router>() : routers;
     }
 
     public CoreRouter addRouter(Router anyRouter) {
