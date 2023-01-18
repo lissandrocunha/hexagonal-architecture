@@ -22,6 +22,11 @@ public class NetworkManagementInputPort implements NetworkManagementUseCase {
     }
 
     @Override
+    public void setOutputPort(RouterManagementOutputPort routerManagementOutputPort) {
+        this.routerManagementOutputPort = routerManagementOutputPort;
+    }
+
+    @Override
     public Network createNetwork(
             IP networkAddress, String networkName, int networkCidr) {
         return Network

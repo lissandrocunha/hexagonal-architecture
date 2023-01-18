@@ -10,9 +10,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SwitchManagementInputPort implements SwitchManagementUseCase {
 
-    SwitchManagementOutputPort switchManagementOutputPort;
+    private SwitchManagementOutputPort switchManagementOutputPort;
 
-    public SwitchManagementInputPort(SwitchManagementOutputPort switchManagementOutputPort){
+    @Override
+    public void setOutputPort(SwitchManagementOutputPort switchManagementOutputPort) {
         this.switchManagementOutputPort = switchManagementOutputPort;
     }
 
@@ -34,7 +35,7 @@ public class SwitchManagementInputPort implements SwitchManagementUseCase {
                 .build();
     }
 
-    public Switch retrieveSwitch(Id id){
+    public Switch retrieveSwitch(Id id) {
         return switchManagementOutputPort.retrieveSwitch(id);
     }
 

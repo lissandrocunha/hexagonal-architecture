@@ -5,8 +5,6 @@ import br.com.lissandrocunha.topologyinventory.domain.service.NetworkService;
 import br.com.lissandrocunha.topologyinventory.domain.vo.Id;
 import br.com.lissandrocunha.topologyinventory.domain.vo.Network;
 import br.com.lissandrocunha.topologyinventory.framework.FrameworkTestData;
-import br.com.lissandrocunha.topologyinventory.framework.adapters.input.generic.NetworkManagementGenericAdapter;
-import br.com.lissandrocunha.topologyinventory.framework.adapters.input.generic.SwitchManagementGenericAdapter;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -20,12 +18,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class NetworkTest extends FrameworkTestData {
 
-    NetworkManagementGenericAdapter networkManagementGenericAdapter;
-    SwitchManagementGenericAdapter switchManagementGenericAdapter;
-
     public NetworkTest(){
-        this.networkManagementGenericAdapter = new NetworkManagementGenericAdapter();
-        this.switchManagementGenericAdapter = new SwitchManagementGenericAdapter();
+        loadPortsAndUseCases();
         loadData();
     }
     @Test
