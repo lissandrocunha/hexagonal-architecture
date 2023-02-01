@@ -5,10 +5,29 @@ import br.com.lissandrocunha.topologyinventory.domain.entity.EdgeRouter;
 import br.com.lissandrocunha.topologyinventory.domain.entity.Router;
 import br.com.lissandrocunha.topologyinventory.domain.entity.Switch;
 import br.com.lissandrocunha.topologyinventory.domain.entity.factory.RouterFactory;
-import br.com.lissandrocunha.topologyinventory.domain.vo.*;
-import br.com.lissandrocunha.topologyinventory.framework.adapters.output.h2.data.*;
+import br.com.lissandrocunha.topologyinventory.domain.vo.IP;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Id;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Location;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Model;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Network;
+import br.com.lissandrocunha.topologyinventory.domain.vo.RouterType;
+import br.com.lissandrocunha.topologyinventory.domain.vo.SwitchType;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Vendor;
+import br.com.lissandrocunha.topologyinventory.framework.adapters.output.h2.data.IPData;
+import br.com.lissandrocunha.topologyinventory.framework.adapters.output.h2.data.LocationData;
+import br.com.lissandrocunha.topologyinventory.framework.adapters.output.h2.data.ModelData;
+import br.com.lissandrocunha.topologyinventory.framework.adapters.output.h2.data.NetworkData;
+import br.com.lissandrocunha.topologyinventory.framework.adapters.output.h2.data.RouterData;
+import br.com.lissandrocunha.topologyinventory.framework.adapters.output.h2.data.RouterTypeData;
+import br.com.lissandrocunha.topologyinventory.framework.adapters.output.h2.data.SwitchData;
+import br.com.lissandrocunha.topologyinventory.framework.adapters.output.h2.data.SwitchTypeData;
+import br.com.lissandrocunha.topologyinventory.framework.adapters.output.h2.data.VendorData;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class RouterH2Mapper {
 

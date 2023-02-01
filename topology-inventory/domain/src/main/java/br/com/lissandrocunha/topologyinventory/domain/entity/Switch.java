@@ -3,7 +3,14 @@ package br.com.lissandrocunha.topologyinventory.domain.entity;
 import br.com.lissandrocunha.topologyinventory.domain.specification.CIDRSpecification;
 import br.com.lissandrocunha.topologyinventory.domain.specification.NetworkAmountSpec;
 import br.com.lissandrocunha.topologyinventory.domain.specification.NetworkAvailabilitySpec;
-import br.com.lissandrocunha.topologyinventory.domain.vo.*;
+import br.com.lissandrocunha.topologyinventory.domain.vo.IP;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Id;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Location;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Model;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Network;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Protocol;
+import br.com.lissandrocunha.topologyinventory.domain.vo.SwitchType;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Vendor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +22,7 @@ import java.util.function.Predicate;
 public class Switch extends Equipment {
 
     private SwitchType switchType;
+    @Setter
     private List<Network> switchNetworks;
 
     @Setter

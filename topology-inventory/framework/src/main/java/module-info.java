@@ -9,6 +9,12 @@ module framework {
     requires com.fasterxml.jackson.core;
     requires jakarta.enterprise.cdi.api;
     requires jakarta.inject.api;
+    requires java.ws.rs;
+    requires io.smallrye.mutiny;
+    requires java.xml.bind;
+    requires smallrye.common.annotation;
+    requires com.fasterxml.jackson.annotation;
+    requires microprofile.openapi.api;
 
     exports br.com.lissandrocunha.topologyinventory.framework.adapters.output.h2.data;
     opens br.com.lissandrocunha.topologyinventory.framework.adapters.output.h2.data;
@@ -23,6 +29,5 @@ module framework {
     uses br.com.lissandrocunha.topologyinventory.application.usecases.NetworkManagementUseCase;
     uses br.com.lissandrocunha.topologyinventory.application.ports.output.RouterManagementOutputPort;
     uses br.com.lissandrocunha.topologyinventory.application.ports.output.SwitchManagementOutputPort;
-
 
 }
