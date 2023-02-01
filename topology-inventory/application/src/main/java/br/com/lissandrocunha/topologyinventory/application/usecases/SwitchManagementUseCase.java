@@ -1,13 +1,15 @@
 package br.com.lissandrocunha.topologyinventory.application.usecases;
 
-import br.com.lissandrocunha.topologyinventory.application.ports.output.SwitchManagementOutputPort;
 import br.com.lissandrocunha.topologyinventory.domain.entity.EdgeRouter;
 import br.com.lissandrocunha.topologyinventory.domain.entity.Switch;
-import br.com.lissandrocunha.topologyinventory.domain.vo.*;
+import br.com.lissandrocunha.topologyinventory.domain.vo.IP;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Id;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Location;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Model;
+import br.com.lissandrocunha.topologyinventory.domain.vo.SwitchType;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Vendor;
 
 public interface SwitchManagementUseCase {
-
-    void setOutputPort(SwitchManagementOutputPort switchManagementOutputPort);
 
     Switch createSwitch(
             Vendor vendor,

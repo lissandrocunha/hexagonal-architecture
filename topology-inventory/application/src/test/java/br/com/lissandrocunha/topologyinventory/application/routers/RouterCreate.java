@@ -12,7 +12,9 @@ import static br.com.lissandrocunha.topologyinventory.domain.vo.RouterType.EDGE;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+
 public class RouterCreate extends ApplicationTestData {
+
     public RouterCreate(){
         loadData();
     }
@@ -20,6 +22,7 @@ public class RouterCreate extends ApplicationTestData {
     @Given("I provide all required data to create a core router")
     public void create_core_router(){
         router = this.routerManagementUseCase.createRouter(
+                null,
                 Vendor.CISCO,
                 Model.XYZ0001,
                 IP.fromAddress("20.0.0.1"),
@@ -36,6 +39,7 @@ public class RouterCreate extends ApplicationTestData {
     @Given("I provide all required data to create an edge router")
     public void create_edge_router(){
         router = this.routerManagementUseCase.createRouter(
+                null,
                 Vendor.HP,
                 Model.XYZ0004,
                 IP.fromAddress("30.0.0.1"),

@@ -8,13 +8,16 @@ import br.com.lissandrocunha.topologyinventory.domain.entity.factory.RouterFacto
 import br.com.lissandrocunha.topologyinventory.domain.vo.*;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
+import javax.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
 public class RouterManagementInputPort implements RouterManagementUseCase {
 
-    RouterManagementOutputPort routerManagementOutputPort;
+    private RouterManagementOutputPort routerManagementOutputPort;
 
-    public RouterManagementInputPort(RouterManagementOutputPort routerNetworkOutputPort){
-        this.routerManagementOutputPort = routerNetworkOutputPort;
+    @Override
+    public void setOutputPort(RouterManagementOutputPort routerManagementOutputPort) {
+        this.routerManagementOutputPort = routerManagementOutputPort;
     }
 
     @Override
@@ -57,7 +60,6 @@ public class RouterManagementInputPort implements RouterManagementUseCase {
     @Override
     public Router removeRouterFromCoreRouter(Router router, CoreRouter coreRouter) {
         var removedRouter = coreRouter.removeRouter(router);
-        persistRouter(coreRouter);
-        return removedRouter;
+        return persistRouter(removedRouter);
     }
 }

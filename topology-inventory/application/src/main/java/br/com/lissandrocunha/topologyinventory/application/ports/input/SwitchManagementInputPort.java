@@ -4,18 +4,21 @@ import br.com.lissandrocunha.topologyinventory.application.ports.output.SwitchMa
 import br.com.lissandrocunha.topologyinventory.application.usecases.SwitchManagementUseCase;
 import br.com.lissandrocunha.topologyinventory.domain.entity.EdgeRouter;
 import br.com.lissandrocunha.topologyinventory.domain.entity.Switch;
-import br.com.lissandrocunha.topologyinventory.domain.vo.*;
-import lombok.NoArgsConstructor;
+import br.com.lissandrocunha.topologyinventory.domain.vo.IP;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Id;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Location;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Model;
+import br.com.lissandrocunha.topologyinventory.domain.vo.SwitchType;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Vendor;
 
-@NoArgsConstructor
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+
+@ApplicationScoped
 public class SwitchManagementInputPort implements SwitchManagementUseCase {
 
-    private SwitchManagementOutputPort switchManagementOutputPort;
-
-    @Override
-    public void setOutputPort(SwitchManagementOutputPort switchManagementOutputPort) {
-        this.switchManagementOutputPort = switchManagementOutputPort;
-    }
+    @Inject
+    SwitchManagementOutputPort switchManagementOutputPort;
 
     @Override
     public Switch createSwitch(

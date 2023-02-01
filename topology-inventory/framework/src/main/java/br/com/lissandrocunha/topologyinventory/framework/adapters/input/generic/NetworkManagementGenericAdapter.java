@@ -6,9 +6,15 @@ import br.com.lissandrocunha.topologyinventory.domain.entity.Switch;
 import br.com.lissandrocunha.topologyinventory.domain.vo.Id;
 import br.com.lissandrocunha.topologyinventory.domain.vo.Network;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+
+@ApplicationScoped
 public class NetworkManagementGenericAdapter {
 
+    @Inject
     private SwitchManagementUseCase switchManagementUseCase;
+    @Inject
     private NetworkManagementUseCase networkManagementUseCase;
 
     public NetworkManagementGenericAdapter(

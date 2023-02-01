@@ -5,6 +5,9 @@ import br.com.lissandrocunha.topologyinventory.domain.entity.CoreRouter;
 import br.com.lissandrocunha.topologyinventory.domain.entity.Router;
 import br.com.lissandrocunha.topologyinventory.domain.vo.*;
 
+import javax.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
 public class RouterManagementGenericAdapter {
 
     private RouterManagementUseCase routerManagementUseCase;

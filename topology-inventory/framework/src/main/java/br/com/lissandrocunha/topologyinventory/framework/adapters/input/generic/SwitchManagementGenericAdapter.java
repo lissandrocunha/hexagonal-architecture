@@ -1,18 +1,19 @@
 package br.com.lissandrocunha.topologyinventory.framework.adapters.input.generic;
 
-import br.com.lissandrocunha.topologyinventory.application.ports.input.RouterManagementInputPort;
-import br.com.lissandrocunha.topologyinventory.application.ports.input.SwitchManagementInputPort;
 import br.com.lissandrocunha.topologyinventory.application.usecases.RouterManagementUseCase;
 import br.com.lissandrocunha.topologyinventory.application.usecases.SwitchManagementUseCase;
 import br.com.lissandrocunha.topologyinventory.domain.entity.EdgeRouter;
 import br.com.lissandrocunha.topologyinventory.domain.entity.Router;
 import br.com.lissandrocunha.topologyinventory.domain.entity.Switch;
-import br.com.lissandrocunha.topologyinventory.domain.vo.*;
-import br.com.lissandrocunha.topologyinventory.framework.adapters.output.h2.RouterManagementH2Adapter;
-import br.com.lissandrocunha.topologyinventory.framework.adapters.output.h2.SwitchManagementH2Adapter;
+import br.com.lissandrocunha.topologyinventory.domain.vo.IP;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Id;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Location;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Model;
+import br.com.lissandrocunha.topologyinventory.domain.vo.RouterType;
+import br.com.lissandrocunha.topologyinventory.domain.vo.SwitchType;
+import br.com.lissandrocunha.topologyinventory.domain.vo.Vendor;
 
 public class SwitchManagementGenericAdapter {
-
 
     private SwitchManagementUseCase switchManagementUseCase;
     private RouterManagementUseCase routerManagementUseCase;

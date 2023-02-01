@@ -8,23 +8,16 @@ import br.com.lissandrocunha.topologyinventory.domain.service.NetworkService;
 import br.com.lissandrocunha.topologyinventory.domain.vo.IP;
 import br.com.lissandrocunha.topologyinventory.domain.vo.Id;
 import br.com.lissandrocunha.topologyinventory.domain.vo.Network;
-import lombok.NoArgsConstructor;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import java.util.function.Predicate;
 
-@NoArgsConstructor
+@ApplicationScoped
 public class NetworkManagementInputPort implements NetworkManagementUseCase {
 
+    @Inject
     RouterManagementOutputPort routerManagementOutputPort;
-
-    public NetworkManagementInputPort(RouterManagementOutputPort routerNetworkOutputPort){
-        this.routerManagementOutputPort = routerNetworkOutputPort;
-    }
-
-    @Override
-    public void setOutputPort(RouterManagementOutputPort routerManagementOutputPort) {
-        this.routerManagementOutputPort = routerManagementOutputPort;
-    }
 
     @Override
     public Network createNetwork(
